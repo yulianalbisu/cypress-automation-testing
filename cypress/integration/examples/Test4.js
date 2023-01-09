@@ -18,6 +18,11 @@ describe('My third test with checkboxes', function() {
 
         cy.get('#opentab').invoke('removeAttr', 'target').click()
 
+        // validate if you are in the right URL
+        cy.url().should('include', 'rahulshettyacademy')
+
+        cy.go('back')
+
 
 
 
