@@ -26,14 +26,6 @@ describe('Testing, using before and after', function() {
         cy.get(':nth-child(1) > .form-control').should('have.attr', 'minlength', '2')
         //3. confirm if radio is disabled
         cy.get('#inlineRadio3').should('be.disabled')
-
-        // go to direct link
-        cy.get(':nth-child(2) > .nav-link').click()
-
-        //Getting both elements
-        cy.selectProduct('Blackberry')
-        cy.selectProduct('Nokia Edge')
-    
     })
-
+    
 })
