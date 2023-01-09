@@ -31,8 +31,13 @@ describe('Testing, using before and after', function() {
         cy.get(':nth-child(2) > .nav-link').click()
 
         //Getting both elements
-        cy.selectProduct('Blackberry')
-        cy.selectProduct('Nokia Edge')
+        // cy.selectProduct('Blackberry')
+        // cy.selectProduct('Nokia Edge')
+        //Getting elements through json example file
+
+        this.data.productName.forEach(function(element) {
+            cy.selectProduct(element)
+        })
     
     })
 
