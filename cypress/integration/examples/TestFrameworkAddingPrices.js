@@ -35,17 +35,14 @@ describe('Testing, using before and after', function() {
         // go to direct link
         homePage.getShopTab().click()
 
-        
-
-        //Getting both elements
-        // cy.selectProduct('Blackberry')
-        // cy.selectProduct('Nokia Edge')
-        //Getting elements through json example file
 
         this.data.productName.forEach(function(element) {
 
             cy.selectProduct(element)
+        })
+
             productName.checkoutButton().click()
+            var sum=0
 
             // Here we are going to get the prices
             cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
@@ -58,11 +55,15 @@ describe('Testing, using before and after', function() {
             {
                 cy.log(sum)
             })
-            
+            cy.get('h3 strong').then(function(element)
+            {
+                const amount = element.text()
+                var res= amount.split(" ")
+                var total = res[1].trim()
+                expect(Number(total)).to.equal(sum)
+            })
             
 
         })
     
     })
-
-})

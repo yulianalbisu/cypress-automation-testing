@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules\\.bin\\cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashBoardTest": "npx cypress run --record --key 39965a3a-6b61-4b62-ac12-2f3ba5f1f57e --spec cypress/integration/examples/*.js --headed --browser chrome --reporter mocha"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +16,9 @@
     "cypress-iframe": "^1.0.1",
     "eslint": "^8.31.0",
     "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.0",
+    "@cypress/browserify-preprocessor": "latest"
   }
 }
