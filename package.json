@@ -15,7 +15,9 @@
     "cypress": "^12.3.0",
     "cypress-iframe": "^1.0.1",
     "eslint": "^8.31.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "multiple-cucumber-html-reporter": "^1.18.0",
+    "neat-csv": "5.1.0"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^15.1.0",
