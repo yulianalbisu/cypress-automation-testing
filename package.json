@@ -9,18 +9,26 @@
     "chromeTest": "npm run test -- --browser chrome",
     "recordDashBoardTest": "npx cypress run --record --key 39965a3a-6b61-4b62-ac12-2f3ba5f1f57e --spec cypress/integration/examples/*.js --headed --browser chrome --reporter mocha"
   },
+  "cypress-cucumber-prepocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/results.json"
+    }
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^12.3.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-iframe": "^1.0.1",
     "eslint": "^8.31.0",
-    "prettier": "^2.5.1",
-    "multiple-cucumber-html-reporter": "^1.18.0",
-    "neat-csv": "5.1.0"
+    "multiple-cucumber-html-reporter": "^3.1.0",
+    "neat-csv": "5.1.0",
+    "prettier": "^2.5.1"
   },
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^15.1.0",
-    "@cypress/browserify-preprocessor": "latest"
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.1",
+    "@cypress/browserify-preprocessor": "latest",
+    "cypress": "latest"
   }
 }

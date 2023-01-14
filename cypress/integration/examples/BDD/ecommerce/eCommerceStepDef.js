@@ -2,8 +2,10 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import HomePage from "../../../pageObjects/HomePage";
 import ProductName from "../../../pageObjects/ProductName";
 
+//define functions to use globally until this level
 const homePage = new HomePage()
 const productName = new ProductName()
+let name
 
 Given('I open ECommerce page', () => 
 {
@@ -70,11 +72,11 @@ Then('select the country submit and verify thankyou', () =>
 })
 
 
-//Given I open ECommerce page
+//Given I open ECommerce page, already here.
 //When I fill the form details
 When('I fill the form details', function(dataTable)
 {
-
+    name = dataTable.rawTable[1][0]
     homePage.getEditBox().type(dataTable.rawTable[1][0])
         
     homePage.getGender().select(dataTable.rawTable[1][1])
@@ -82,7 +84,7 @@ When('I fill the form details', function(dataTable)
 //Then validate the forms behaviour
 Then('validate the forms behaviour', function() 
 {
-    homePage.getTwoWayDataBinding().should('have.value', this.data.name)
+    homePage.getTwoWayDataBinding().should('have.value', name.name)
     
     homePage.getEditBox().should('have.attr', 'minlength', '2')
 })
